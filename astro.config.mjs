@@ -1,6 +1,5 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import cloudflare from '@astrojs/cloudflare';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
@@ -19,12 +18,10 @@ const prettyCodeOptions = {
   keepBackground: false,
 };
 
-// https://astro.build/config
 export default defineConfig({
   site: CONFIG.site.url,
-  output: 'server',
-
-  adapter: cloudflare(),
+  base: '/portfolio',
+  output: 'static',
 
   vite: {
     plugins: [tailwindcss()],
@@ -46,3 +43,4 @@ export default defineConfig({
     rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
   },
 });
+
