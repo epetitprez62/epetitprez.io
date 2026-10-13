@@ -19,8 +19,7 @@ const prettyCodeOptions = {
 };
 
 export default defineConfig({
-  site: CONFIG.site.url,
-  base: '/portfolio',
+  site: 'https://epetitprez62.github.io',
   output: 'static',
 
   vite: {
